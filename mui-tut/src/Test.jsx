@@ -3,7 +3,23 @@ import { TextField, Button } from '@mui/material';
 
 function Test() {
 
-    const [name, setName] = useState("");
+    const [inputs, setInputs] = useState({
+        name: "",
+        email: "",
+        password: ""
+    });
+
+    function handleChange(e) {
+        setInputs((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }));
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(inputs);
+    }
 
     return (
         <div>
