@@ -12,7 +12,8 @@ function Test() {
     const [inputs, setInputs] = useState({
         name: "",
         email: "",
-        password: ""
+        password: "",
+        subscribe: false
     });
 
     function handleChange(e) {
@@ -43,7 +44,17 @@ function Test() {
                     sx={{ margin: 3 }} placeholder='Password' variant='filled' />
 
                 <FormGroup>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                onChange={() =>
+                                    setInputs((prev) => ({
+                                        ...prev,
+                                        subscribe: !inputs.subscribe,
+                                    }))
+                                }
+                            />
+                        } label="Label" />
                 </FormGroup>
 
                 <Button type='submit'>Submit</Button>
