@@ -29,7 +29,9 @@ function Test() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form
+                style={{ display: "flex", flexDirection: "column" }}
+                onSubmit={handleSubmit}>
                 <TextField name='name' value={inputs.name}
                     onChange={handleChange} type={'text'}
                     sx={{ margin: 3 }} placeholder='Name' variant='outlined' />
@@ -42,7 +44,6 @@ function Test() {
 
                 <FormGroup>
                     <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-                    <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
                 </FormGroup>
 
                 <Button type='submit'>Submit</Button>
