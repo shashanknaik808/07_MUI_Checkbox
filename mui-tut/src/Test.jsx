@@ -1,9 +1,12 @@
 import React from 'react';
+import { Typography } from '@mui/material';
 
 function Test() {
     return (
         <div>
-            Hello World
+            <Typography>
+                Hello World
+            </Typography>
         </div>
     )
 }
