@@ -1,5 +1,11 @@
-import React from 'react';
-import { TextField, Button } from '@mui/material';
+import React, { useState } from 'react';
+import {
+    TextField,
+    Button,
+    FormGroup,
+    FormControlLabel,
+    Checkbox
+} from '@mui/material';
 
 function Test() {
 
@@ -33,6 +39,11 @@ function Test() {
                 <TextField name='password' value={inputs.password}
                     onChange={handleChange} type={'password'}
                     sx={{ margin: 3 }} placeholder='Password' variant='filled' />
+
+                <FormGroup>
+                    <FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
+                    <FormControlLabel disabled control={<Checkbox />} label="Disabled" />
+                </FormGroup>
 
                 <Button type='submit'>Submit</Button>
             </form>
